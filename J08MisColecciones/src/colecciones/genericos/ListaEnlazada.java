@@ -107,8 +107,25 @@ public class ListaEnlazada<T> implements Lista<T> {
 
 	@Override
 	public Iterator<T> iterator() {
-		// TODO Auto-generated method stub
-		return null;
+		return new Itr();
+	}
+
+	private class Itr implements Iterator<T> {
+
+		private Nodo proximo = primero;
+		
+		@Override
+		public boolean hasNext() {
+			return proximo != null;
+		}
+
+		@Override
+		public T next() {
+			T elemento = proximo.dato;
+			proximo = proximo.siguiente;
+			return elemento;
+		}
+		
 	}
 
 }

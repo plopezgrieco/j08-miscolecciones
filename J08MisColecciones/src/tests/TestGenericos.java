@@ -17,13 +17,14 @@ public class TestGenericos {
 			System.out.println(str);
 		}
 		
-		
-		
-		
 		Lista<Integer> listaNums = new ListaEnlazada<>();
 
 		listaNums.agregar(148);
+		listaNums.agregar(3148);
+		listaNums.agregar(48);
 		
-		
+		for (Integer integer : listaNums) {
+			System.out.println(integer);
+		}
 	}
 }

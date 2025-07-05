@@ -64,23 +64,22 @@ public class ListaArray<T> implements Lista<T> {
 
 	@Override
 	public Iterator<T> iterator() {
-		return new MiIterator<>();
+		return new Itr();
 	}
 	
-	private class MiIterator<T> implements Iterator<T>{
+	private class Itr implements Iterator<T> {
 
-		int actual = 0;
+		private int proximo = 0; 
 		
 		@Override
 		public boolean hasNext() {
-			// TODO Auto-generated method stub
-			return false;
+			return proximo < cant;
 		}
 
+		@SuppressWarnings("unchecked")
 		@Override
 		public T next() {
-			// TODO Auto-generated method stub
-			return null;
+			return (T)almacen[proximo++];
 		}
 		
 	}
